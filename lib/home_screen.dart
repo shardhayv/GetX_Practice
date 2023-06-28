@@ -13,7 +13,6 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.blue,
         title: const Text('Home Page'),
       ),
       body: Column(
@@ -35,7 +34,40 @@ class _HomeScreenState extends State<HomeScreen> {
                         child: const Text('Okay')));
               },
             ),
-          )
+          ),
+          Card(
+            child: ListTile(
+              title: const Text('GetX Bottom Sheet '),
+              subtitle: const Text('GetX Dialog alert showing'),
+              onTap: () {
+                Get.bottomSheet(
+                  Container(
+                    decoration: BoxDecoration(
+                        color: Colors.green,
+                        borderRadius: BorderRadius.circular(25)),
+                    child: Column(
+                      children: [
+                        ListTile(
+                          leading: const Icon(Icons.light_mode),
+                          title: const Text('Light Theme'),
+                          onTap: () {
+                            Get.changeTheme(ThemeData.light());
+                          },
+                        ),
+                        ListTile(
+                          onTap: () {
+                            Get.changeTheme(ThemeData.dark());
+                          },
+                          leading: const Icon(Icons.dark_mode),
+                          title: const Text('Dark Theme'),
+                        )
+                      ],
+                    ),
+                  ),
+                );
+              },
+            ),
+          ),
         ],
       ),
       floatingActionButton: FloatingActionButton(
