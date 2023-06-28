@@ -1,21 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:getx_practice/screenOne.dart';
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+class ScreenTwo extends StatefulWidget {
+  const ScreenTwo({super.key});
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
+  State<ScreenTwo> createState() => _ScreenTwoState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _ScreenTwoState extends State<ScreenTwo> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.green,
-        title: const Text('Home Page'),
+        title: const Text('Screen Two '),
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -24,11 +23,10 @@ class _HomeScreenState extends State<HomeScreen> {
           Center(
             child: TextButton(
               onPressed: () {
-                Get.to(const ScreenOne(
-                  name: 'Shardhay',
-                ));
+                Get.back();
+                Get.back();
               },
-              child: const Text('Go to Screen One'),
+              child: const Text('Go back to Homepage'),
             ),
           ),
         ],
