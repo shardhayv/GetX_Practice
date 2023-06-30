@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:getx_practice/home_screen.dart';
-import 'package:getx_practice/screeenTwo.dart';
-import 'package:getx_practice/screenOne.dart';
+import 'package:getx_practice/languages.dart';
 
 void main() {
   runApp(const MyApp());
@@ -20,6 +19,9 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       title: 'Flutter Demo',
+      fallbackLocale: const Locale('en', 'US'),
+      translations: Languages(),
+      locale: const Locale('en', 'US'),
       theme: ThemeData(
         primarySwatch: Colors.blue,
         useMaterial3: true,
@@ -27,8 +29,7 @@ class _MyAppState extends State<MyApp> {
       home: const HomeScreen(),
       getPages: [
         GetPage(name: '/', page: () => const HomeScreen()),
-        GetPage(name: '/screenOne', page: () => ScreenOne()),
-        GetPage(name: '/screenTwo', page: () => const ScreenTwo()),
+        // GetPage(name: '/screenOne', page: () => ScreenOne()),
       ],
     );
   }

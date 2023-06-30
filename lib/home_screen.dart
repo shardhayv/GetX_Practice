@@ -17,27 +17,33 @@ class _HomeScreenState extends State<HomeScreen> {
         title: const Text('Home Page'),
       ),
       body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Container(
-            // height: MediaQuery.of(context).size.height * 0.8,
-            // height: MediaQuery.of(context).size.width * 0.8,
-            height: Get.height * 0.2,
-            width: Get.width * 0.8,
-            color: Colors.red,
-            child: const Center(
-              child: Text('Center'),
-            ),
+          ListTile(
+            title: (Text('message'.tr)),
+            subtitle: Text('name'.tr),
           ),
-          Container(
-            // height: MediaQuery.of(context).size.height * 0.8,
-            // height: MediaQuery.of(context).size.width * 0.8,
-            height: Get.height * 0.2,
-            width: Get.width * 0.8,
-            color: Colors.yellow,
-            child: const Center(
-              child: Text('Center'),
-            ),
+          const SizedBox(
+            height: 20,
           ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              ElevatedButton(
+                onPressed: () {
+                  Get.updateLocale(const Locale('en', 'US'));
+                },
+                child: const Text('English'),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  Get.updateLocale(const Locale('sa', 'IN'));
+                },
+                child: const Text('Sanskrit'),
+              ),
+            ],
+          )
         ],
       ),
     );
