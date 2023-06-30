@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:getx_practice/home_screen.dart';
+import 'package:getx_practice/screeenTwo.dart';
+import 'package:getx_practice/screenOne.dart';
 
 void main() {
   runApp(const MyApp());
@@ -23,6 +25,11 @@ class _MyAppState extends State<MyApp> {
         useMaterial3: true,
       ),
       home: const HomeScreen(),
+      getPages: [
+        GetPage(name: '/', page: () => const HomeScreen()),
+        GetPage(name: '/screenOne', page: () => ScreenOne()),
+        GetPage(name: '/screenTwo', page: () => const ScreenTwo()),
+      ],
     );
   }
 }

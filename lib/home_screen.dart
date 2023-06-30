@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:getx_practice/screenOne.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -24,9 +23,13 @@ class _HomeScreenState extends State<HomeScreen> {
           Center(
             child: TextButton(
               onPressed: () {
-                Get.to(const ScreenOne(
-                  name: 'Shardhay',
-                ));
+                // Get.to(const ScreenOne(
+                //   name: 'Shardhay',
+                // ));
+                Get.toNamed('/screenOne', arguments: [
+                  'name',
+                  'Shardhay',
+                ]);
               },
               child: const Text('Go to Screen One'),
             ),
