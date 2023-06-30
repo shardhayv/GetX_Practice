@@ -17,21 +17,25 @@ class _HomeScreenState extends State<HomeScreen> {
         title: const Text('Home Page'),
       ),
       body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Center(
-            child: TextButton(
-              onPressed: () {
-                // Get.to(const ScreenOne(
-                //   name: 'Shardhay',
-                // ));
-                Get.toNamed('/screenOne', arguments: [
-                  'name',
-                  'Shardhay',
-                ]);
-              },
-              child: const Text('Go to Screen One'),
+          Container(
+            // height: MediaQuery.of(context).size.height * 0.8,
+            // height: MediaQuery.of(context).size.width * 0.8,
+            height: Get.height * 0.2,
+            width: Get.width * 0.8,
+            color: Colors.red,
+            child: const Center(
+              child: Text('Center'),
+            ),
+          ),
+          Container(
+            // height: MediaQuery.of(context).size.height * 0.8,
+            // height: MediaQuery.of(context).size.width * 0.8,
+            height: Get.height * 0.2,
+            width: Get.width * 0.8,
+            color: Colors.yellow,
+            child: const Center(
+              child: Text('Center'),
             ),
           ),
         ],
